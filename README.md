@@ -75,7 +75,7 @@ See 'snap info docker' for additional versions.
 ## Ответ на задание 3
 
 ![Задание 3](img/image3.png)
-![Задание 3-1](img/image4.png)
+
 
 ## Задача 4
 1. Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
@@ -85,49 +85,9 @@ See 'snap info docker' for additional versions.
 5. (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения ```docker ps -a```
 6. Повторите SQL-запрос на сервере и приложите скриншот и ссылку на fork.
 
-## Ответ на задание 3
+## Ответ на задание 4
 
-Пока не получилось, ищу
-```
-radmin@docker1:/opt/shvirtd-example-python$ docker compose logs reverse-proxy
-WARN[0000] /opt/shvirtd-example-python/proxy.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
-reverse-proxy-1  | [WARNING]  (1) : config : missing timeouts for frontend 'http_front'.
-reverse-proxy-1  |    | While not properly invalid, you will certainly encounter various problems
-reverse-proxy-1  |    | with such a configuration. To fix this, please ensure that all following
-reverse-proxy-1  |    | timeouts are set to a non-zero value: 'client', 'connect', 'server'.
-reverse-proxy-1  | [WARNING]  (1) : config : missing timeouts for backend 'http_back'.
-reverse-proxy-1  |    | While not properly invalid, you will certainly encounter various problems
-reverse-proxy-1  |    | with such a configuration. To fix this, please ensure that all following
-reverse-proxy-1  |    | timeouts are set to a non-zero value: 'client', 'connect', 'server'.
-reverse-proxy-1  | [WARNING]  (8) : Server http_back/web is DOWN, reason: Layer4 connection problem, info: "Connection refused", check duration: 0ms. 0 active and 0 backup servers left. 0 sessions active, 0 requeued, 0 remaining in queue.
-reverse-proxy-1  | [NOTICE]   (1) : New worker #1 (8) forked
-reverse-proxy-1  | [NOTICE]   (8) : haproxy version is 2.4.30-bfe53a9
-reverse-proxy-1  | [NOTICE]   (8) : path to executable is /usr/local/sbin/haproxy
-reverse-proxy-1  | [ALERT]    (8) : backend 'http_back' has no server available!
-reverse-proxy-1  | [WARNING]  (8) : Server http_back/web is UP, reason: Layer4 check passed, check duration: 0ms. 1 active and 0 backup servers online. 0 sessions requeued, 0 total in queue.
-reverse-proxy-1  | [WARNING]  (1) : Exiting Master process...
-reverse-proxy-1  | [WARNING]  (8) : Proxy http_front stopped (cumulated conns: FE: 0, BE: 0).
-reverse-proxy-1  | [WARNING]  (8) : Stopping backend http_back in 0 ms.
-reverse-proxy-1  | [WARNING]  (8) : Stopping frontend GLOBAL in 0 ms.
-reverse-proxy-1  | [WARNING]  (1) : Current worker #1 (8) exited with code 0 (Exit)
-reverse-proxy-1  | [WARNING]  (1) : All workers exited. Exiting... (0)
-reverse-proxy-1  | [WARNING]  (1) : config : missing timeouts for frontend 'http_front'.
-reverse-proxy-1  |    | While not properly invalid, you will certainly encounter various problems
-reverse-proxy-1  |    | with such a configuration. To fix this, please ensure that all following
-reverse-proxy-1  |    | timeouts are set to a non-zero value: 'client', 'connect', 'server'.
-reverse-proxy-1  | [WARNING]  (1) : config : missing timeouts for backend 'http_back'.
-reverse-proxy-1  |    | While not properly invalid, you will certainly encounter various problems
-reverse-proxy-1  |    | with such a configuration. To fix this, please ensure that all following
-reverse-proxy-1  |    | timeouts are set to a non-zero value: 'client', 'connect', 'server'.
-reverse-proxy-1  | [NOTICE]   (1) : New worker #1 (9) forked
-radmin@docker1:/opt/shvirtd-example-python$ docker compose logs web
-WARN[0000] /opt/shvirtd-example-python/proxy.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
-web  | INFO:     Started server process [1]
-web  | INFO:     Waiting for application startup.
-web  | INFO:     Application startup complete.
-web  | INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
-radmin@docker1:/opt/shvirtd-example-python$ 
-```
+![Задание 4](img/image4.png)
 
 ## Задача 5 (*)
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
